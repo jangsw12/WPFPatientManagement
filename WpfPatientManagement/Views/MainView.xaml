@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfPatientManagement.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPatientManagement.Views" 
+        xmlns:controls="clr-namespace:WpfPatientManagement.Controls"
+        xmlns:vm="clr-namespace:WpfPatientManagement.ViewModels"
+        mc:Ignorable="d"
+        Title="MainView" 
+        WindowStyle="None"
+        Height="450" Width="800">
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0"
+                      GlassFrameThickness="0"
+                      ResizeBorderThickness="6"
+                      UseAeroCaptionButtons="False"/>
+    </WindowChrome.WindowChrome>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:LoginControlViewModel}">
+            <controls:LoginControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SignupControlViewModel}">
+            <controls:SignupControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:FrontViewModel}">
+            <local:FrontView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TreatmentViewModel}">
+            <local:TreatmentView/>
+        </DataTemplate>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Title Bar-->
+        <controls:TitleBar Grid.Row="0"/>
+
+        <!--Body-->
+        <ContentControl Grid.Row="1"
+                        Content="{Binding CurrentViewModel}"/>
+    </Grid>
+</Window>
