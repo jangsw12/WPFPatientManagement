@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="WpfPatientManagement.Controls.PatientRecordControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfPatientManagement.Controls" 
+             xmlns:controls="clr-namespace:WpfLib.Controls;assembly=WpfLib"
+             mc:Ignorable="d" 
+             d:DesignHeight="430" d:DesignWidth="320"
+             Background="{StaticResource ColorLightGray}">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <!--Front View에서 넘어온 정보-->
+        <controls:TextBoxControl Grid.Row="0"
+                                 Background="White"
+                                 BorderBrush="Black"
+                                 WaterMarkText="간호사 메모."
+                                 Text="{Binding NurseNote, Mode=TwoWay}"/>
+
+        <!--Buttons CURD-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    Content="조회"
+                    Command="{Binding SelectRecordCommand}"/>
+            <Button Grid.Column="1"
+                    Content="수정(구현x)"
+                    Command=""/>
+            <Button Grid.Column="2"
+                    Content="삭제(구현x)"
+                    Command=""/>
+        </Grid>
+
+        <!--이전 진료 기록-->
+        <Border Grid.Row="2">
+            <DataGrid ItemsSource="{Binding PatientRecordList}"
+                      SelectedItem="{Binding SelectedPatientInfo, Mode=TwoWay}"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      HeadersVisibility="Column">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="날짜" Binding="{Binding ConsultationDate}" Width="*"/>
+                    <DataGridTextColumn Header="진료 내용" Binding="{Binding Consultation}" Width="3*"/>
+                    <DataGridTextColumn Header="진료 의사" Binding="{Binding DoctorID}" Width="*"/>
+                </DataGrid.Columns>                
+            </DataGrid>
+        </Border>
+        
+        <!--진료 정보 기록-->
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>    
+            </Grid.RowDefinitions>
+
+            <controls:TextBoxControl Grid.Row="0"
+                                     Background="White"
+                                     BorderBrush="Black"
+                                     WaterMarkText="진료 내용 입력."
+                                     WaterMarkTextColor="Blue"
+                                     Text="{Binding Consultation, Mode=TwoWay}"/>
+
+            <Button Grid.Row="1"
+                    Content="진료 완료"
+                    Background="{StaticResource ColorMintGreen}"
+                    Command="{Binding CompleteConsultationCommand}"/>
+        </Grid>
+    </Grid>
+</UserControl>
