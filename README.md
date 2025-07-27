@@ -30,7 +30,7 @@ wpf로 작성한 환자 관리 애플리케이션입니다.
 
 ## 기능 소개
 
-![](C:\Users\장성우\AppData\Roaming\marktext\images\2025-07-27-09-05-24-image.png)
+![메인 화면](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\메인%20화면.png)
 
 **메인 화면 : 커스텀 타이틀 바 + 로그인 화면**
 
