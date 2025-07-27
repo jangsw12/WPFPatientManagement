@@ -28,57 +28,59 @@ wpf로 작성한 환자 관리 애플리케이션입니다.
 
 ---
 
-## 기능 소개
+## 화면 소개
+
+**1. 메인 화면**
 
 ![main](Images/main1.png)
 
-![main1](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\main1.png)
+커스텀 타이틀 바 + 로그인 화면으로 구성
 
-**메인 화면 : 커스텀 타이틀 바 + 로그인 화면**
+입력창 워터마크로 표시
 
-- 입력칸 워터마크로 표시
+![main2](Images/main2.png)
 
-![main2](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\main2.png)
+로그인 실패 시 오류 메시지 표시
 
-- 버튼 
+입력한 사용자 정보에 따라 간호사 화면 또는 의사 화면으로 이동
 
-- 사용자 정보에 따라 간호사 뷰 or 의사 뷰로 이동
 
-![nurse1](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\nurse1.png)
 
-**간호사 화면 : 환자 리스트 + 환자 정보 CRUD + 의사 화면과 연결할 텍스트 및 버튼**
+**2. 간호사 화면**
 
-- 데이터 그리드..
+![nurse1](Images/nurse1.png)
 
-![nurse2](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\nurse2.png)
+환자 리스트 + 환자 정보 CRUD + 의사 화면과 연결할 텍스트 및 버튼으로 구성
+
+![nurse2](Images/nurse2.png)
 
 이름으로 환자 정보 검색
 
-- 해당 환자 클릭 시 환자 세부 정보 오른쪽에 표시
+환자 클릭 시 환자 세부 정보 오른쪽에 표시
 
-- 성별 부분은 DataGrid에서 보여지는 것과 저장 되는 값이 다르게 표시(GenderConverter 이용)
+성별은 DataGrid에서 보이는 것과 저장되는 값 다르게 표시
 
-![nurse3](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\nurse3.png)
+![nurse3](Images/nurse3.png)
 
 환자 정보 등록
 
-![nurse4](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\nurse4.png)
+![nurse4](Images/nurse4.png)
 
-등록 완료된 환자 표시
+등록 완료된 환자 정보
 
-![nurse5](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\nurse5.png)
+![nurse5](Images/nurse5.png)
 
 환자 정보 갱신
 
-![nurse6](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\nurse6.png)
+![nurse6](Images/nurse6.png)
 
 갱신된 환자 정보 표시
 
-![nurse7](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\nurse7.png)
+![nurse7](Images/nurse7.png)
 
 접수 내용 입력 후 접수 시도
 
-![nurse8](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\nurse8.png)
+![nurse8](Images/nurse8.png)
 
 접수 완료 메세지 출력
 
@@ -86,37 +88,39 @@ wpf로 작성한 환자 관리 애플리케이션입니다.
 
 - 접수 내용 의사 화면으로 전달
 
-![nurse9](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\nurse9.png)
+![nurse9](Images/nurse9.png)
 
 접수된 환자에 대해선 여러번 접수 하지 못 하도록 예외처리
 
-![doctor1](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\doctor1.png)
+
+
+
 
 **의사 화면 : 환자 리스트 + 진료 기록**
 
+![doctor1](Images/doctor1.png)
+
 - 접수된 환자순으로 자동 정렬 되어 표시
 
-![doctor2](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\doctor2.png)
+![doctor2](Images/doctor2.png)
 
 접수된 환자 클릭시 간호사 화면에서 넘어온 접수 정보 표시
 
-![doctor3](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\doctor3.png)
+![doctor3](Images/doctor3.png)
 
 진료 기록 조회 (수정, 삭제는 아직 미구현)
 
 - 현재 로그인 중인 의사 id가 진료한 의사로 입력
 
-![doctor4](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\doctor4.png)
+![doctor4](Images/doctor4.png)
 
 진료 내용 입력
 
-![doctor5](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\doctor5.png)
+![doctor5](Images/doctor5.png)
 
-![](C:\Users\장성우\AppData\Roaming\marktext\images\2025-07-27-09-31-16-image.png)
+진료 완료 버튼 클릭시 접수 상태, 간호사 메모, 진료 내용 **데이터 실시간 업데이트**
 
-- 진료 완료 버튼 클릭시 접수 상태, 간호사 메모, 진료 내용 **데이터 실시간 업데이트**
-
-![doctor6](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\doctor6.png)
+![doctor6](Images/doctor6.png)
 
 접수된 환자에 한에서 진료 가능
 
@@ -132,4 +136,4 @@ wpf로 작성한 환자 관리 애플리케이션입니다.
 
 **ERD 구조**
 
-![DB_ERD](C:\Users\장성우\Documents\포트폴리오\WpfPatientManagement\Images\DB_ERD.png)
+![DB_ERD](Images/DB_ERD.png)
